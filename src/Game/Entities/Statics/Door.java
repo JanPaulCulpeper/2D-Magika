@@ -19,6 +19,9 @@ public class Door extends StaticEntity {
 
     private Rectangle ir = new Rectangle();
     public Boolean EP = false;
+    public Boolean doorStatus= false;
+
+
 
     private BaseWorld world;
 
@@ -62,7 +65,19 @@ public class Door extends StaticEntity {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Images.door,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
+    	if(String.valueOf(handler.getWorld()).contains("World1")) {
+
+    	    if(doorStatus) {
+
+    	    g.drawImage(Images.door,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
+
+    	    }
+
+    	    }else {
+
+    	    g.drawImage(Images.door,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
+
+    	    }
 
         g.setColor(Color.black);
         checkForPlayer(g, handler.getWorld().getEntityManager().getPlayer());
