@@ -34,6 +34,7 @@ public class Item {
     
     //New items
     public static Item Coin = new Item(Images.coin,"Coin",3);
+    public static Item Healer = new Item(Images.healer,"Healer",4);
 
 
 

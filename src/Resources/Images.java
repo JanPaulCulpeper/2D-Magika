@@ -46,6 +46,7 @@ public class Images {
 	public static BufferedImage loading;
 	public static BufferedImage spellGUI;
 	public static BufferedImage coin;
+	public static BufferedImage healer;
 
 
 
@@ -110,6 +111,7 @@ public class Images {
 
 			// added Items
 			coin = ImageIO.read(getClass().getResourceAsStream("/Blocks/Coin.png"));
+			healer = ImageIO.read(getClass().getResourceAsStream("/Blocks/magikaHealer.png"));
 			//icon
 			icon = new ImageIcon(runesheet.crop(Rwidth*1,Rheight*0,Rwidth,Rheight));
 
