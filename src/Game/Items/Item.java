@@ -4,6 +4,7 @@ import Resources.Images;
 import Main.Handler;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 /**
@@ -63,6 +64,7 @@ public class Item {
             pickedUp=true;
             handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(this);
         }
+   
     }
 
     public void render(Graphics g){

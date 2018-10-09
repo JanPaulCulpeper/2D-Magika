@@ -8,6 +8,8 @@ import Worlds.BaseWorld;
 
 import java.awt.*;
 
+import com.sun.glass.events.KeyEvent;
+
 /**
  * Created by Elemental on 2/2/2017.
  */
@@ -50,6 +52,11 @@ public class Door extends StaticEntity {
         }else if(!handler.getKeyManager().attbut){
             EP=false;
         }
+        //Press tab key to go into next world
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_TAB)) {
+			
+			handler.setWorld(world);
+		}
 
     }
 

@@ -45,6 +45,7 @@ public class Images {
     public static BufferedImage[] FireBallDown;
     public static BufferedImage loading;
     public static BufferedImage spellGUI;
+    
 
 
     public Images() {

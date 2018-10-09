@@ -31,6 +31,14 @@ public class Inventory {
         uiManager.addObjects(new UIInventory(0,0, 329, 265, Images.inventory,() -> {
         }));
     }
+//    public void XaddItems() {
+//    //Add all items when X is pressed
+//    	
+//    if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_X)) {
+//    	for(Item i : inventoryItems){
+//    	 handler.getWorld().getItemManager().;
+//    }}
+//    }
 
     public void tick() {
 
@@ -109,8 +117,11 @@ public class Inventory {
             handler.getWorld().getEntityManager().getPlayer().getSpellGUI().addSpell(new FireBallSpell(handler));
         }
         inventoryItems.add(item);
-
+        
     }
+    
+  
+    
 
     //GET SET
     public Handler getHandler() {
