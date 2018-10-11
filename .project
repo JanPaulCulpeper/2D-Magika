@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>res/Blocks/Skey.png</name>
+			<type>1</type>
+			<location>/Users/RN9/Desktop/Skey.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>

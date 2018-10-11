@@ -48,6 +48,7 @@ public class Images {
 	public static BufferedImage coin;
 	public static BufferedImage healer;
 	public static BufferedImage CoinTile;
+	public static BufferedImage key;
 	
 
 
@@ -115,6 +116,7 @@ public class Images {
 			coin = ImageIO.read(getClass().getResourceAsStream("/Blocks/Coin.png"));
 			healer = ImageIO.read(getClass().getResourceAsStream("/Blocks/magikaHealer.png"));
 			CoinTile = ImageIO.read(getClass().getResourceAsStream("/Blocks/marioblock.png"));
+			key = ImageIO.read(getClass().getResourceAsStream("/Blocks/Skey.png"));
 			
 			
 			//icon
