@@ -77,6 +77,7 @@ public class Rock extends StaticEntity {
 
     @Override
     public void die() {
+    	handler.getWorld().getItemManager().addItem(Item.Healer.createNew((int)x + bounds.x+50,(int)y + bounds.y+50,1));
         randint=new Random();
         RNGR=randint.nextInt(1) + 1;
         System.out.println(RNGR);

@@ -1,5 +1,6 @@
 package Game.Inventories;
 
+import Game.Entities.Creatures.Player;
 import Game.Items.Item;
 import Game.SpellCast.FireBallSpell;
 import Resources.Images;
@@ -47,6 +48,15 @@ public class Inventory {
                 inventoryItems.remove(inventoryItems.indexOf(i));
                 return;
             }
+            
+            if(i.getId() == 4) {
+            	Player e = handler.getWorld().getEntityManager().getPlayer();
+    			if (!(e.getHealth()==75)) {
+    				e.setHealth(75);
+    				i.setCount(i.getCount()-1);
+            }
+    		
+        }
         }
 
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_Q)){

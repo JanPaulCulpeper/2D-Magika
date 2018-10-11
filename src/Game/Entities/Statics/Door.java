@@ -1,7 +1,6 @@
 package Game.Entities.Statics;
 
 import Game.Entities.Creatures.Player;
-
 import Game.GameStates.State;
 import Main.Handler;
 import Resources.Images;
@@ -10,6 +9,7 @@ import Worlds.BaseWorld;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+//import com.sun.glass.events.KeyEvent;
 
 /**
  * Created by Elemental on 2/2/2017.
