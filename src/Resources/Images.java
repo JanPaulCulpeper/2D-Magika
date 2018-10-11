@@ -47,6 +47,8 @@ public class Images {
 	public static BufferedImage spellGUI;
 	public static BufferedImage coin;
 	public static BufferedImage healer;
+	public static BufferedImage CoinTile;
+	
 
 
 
@@ -112,6 +114,9 @@ public class Images {
 			// added Items
 			coin = ImageIO.read(getClass().getResourceAsStream("/Blocks/Coin.png"));
 			healer = ImageIO.read(getClass().getResourceAsStream("/Blocks/magikaHealer.png"));
+			CoinTile = ImageIO.read(getClass().getResourceAsStream("/Blocks/marioblock.png"));
+			
+			
 			//icon
 			icon = new ImageIcon(runesheet.crop(Rwidth*1,Rheight*0,Rwidth,Rheight));
 
@@ -206,6 +211,7 @@ public class Images {
 			blocks[12] = newsheet.crop(0,260,Bwidth,Bheight);//mossyrock
 			blocks[13] = newsheet.crop(176,0,Bwidth,Bheight*2);//tree
 			blocks[14] = newsheet.crop(174,410,78,74);//rock
+			
 
 
 			//player anim
