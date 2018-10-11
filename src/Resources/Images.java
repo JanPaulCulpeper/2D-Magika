@@ -45,10 +45,14 @@ public class Images {
 	public static BufferedImage[] FireBallDown;
 	public static BufferedImage loading;
 	public static BufferedImage spellGUI;
+	//new 
 	public static BufferedImage coin;
 	public static BufferedImage healer;
 	public static BufferedImage CoinTile;
 	public static BufferedImage key;
+	public static BufferedImage[] Chest;
+	public static BufferedImage ChestUI;
+
 	
 
 
@@ -62,6 +66,8 @@ public class Images {
 		SpriteSheet FireBallRightsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBallRight.png"));
 		SpriteSheet FireBallUpsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBallUp.png"));
 		SpriteSheet FireBallDownsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBallDown.png"));
+		//new
+		SpriteSheet Chestsheet = new SpriteSheet(Images.loadImage("/Sheets/chest2.png"));
 
 
 
@@ -90,7 +96,9 @@ public class Images {
 		FireBallRight = new BufferedImage[6];
 		FireBallUp = new BufferedImage[6];
 		FireBallDown = new BufferedImage[6];
-
+		
+		//chest array
+		Chest = new BufferedImage[2];
 
 
 
@@ -121,6 +129,10 @@ public class Images {
 			
 			//icon
 			icon = new ImageIcon(runesheet.crop(Rwidth*1,Rheight*0,Rwidth,Rheight));
+			
+			//Chest
+			Chest[0] = Chestsheet.crop(0, 0, 32, 32);
+			Chest[1] = Chestsheet.crop(32, 0, 32, 32);
 
 			//fireball left
 			FireBallLeft[0]= FireBallsheet.crop(Fwidth*0,Fheight*0,Fwidth,Fheight);
