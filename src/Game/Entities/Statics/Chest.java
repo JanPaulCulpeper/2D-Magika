@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -63,7 +64,11 @@ public class Chest extends StaticEntity{
 		if(isBeinghurt()){
 			setHealth(10);
 		}
-
+//if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SPACE)) {
+//	
+//	Item1Amount++;
+//	
+//}
 
 		if(handler.getKeyManager().attbut){
 			EP=true;
@@ -91,7 +96,7 @@ public class Chest extends StaticEntity{
 	        g.drawImage(Item2.getTexture(), 750, 15, Item2.getWidth(), Item2.getHeight(), null);
 			g.setColor(Color.WHITE);
 			g.drawString(String.valueOf(getItem1Amount())+"/3", 710,25+30);
-	        g.drawString(String.valueOf(getItem2Amount())+"/3", 776,25+30);
+	        g.drawString(String.valueOf(getItem2Amount())+"/1", 776,25+30);
 	        
 	        g.setColor(Color.BLACK);
 	    	g.fillRect((int)(x-handler.getGameCamera().getxOffset())+100,(int)(y-handler.getGameCamera().getyOffset())-90, textBoxWidth,  textBowHeight);
@@ -129,7 +134,7 @@ public class Chest extends StaticEntity{
 
 	
 	public static boolean DoorStatus() {
-		if ((Item1Amount==3)&&(Item2Amount==3)) {
+		if ((Item1Amount==3)&&(Item2Amount==1)) {
 			return true;
 		} else {
 			return false;

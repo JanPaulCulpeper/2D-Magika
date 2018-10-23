@@ -1,6 +1,7 @@
 package Game.Inventories;
 
 import Game.Entities.Creatures.Player;
+import Game.Entities.Statics.Chest;
 import Game.Items.Item;
 import Game.SpellCast.FireBallSpell;
 import Resources.Images;
@@ -64,9 +65,14 @@ public class Inventory {
             handler.getWorld().getEntityManager().getPlayer().getSpellGUI().setActive(false);
 
         }
+        
 
         if(!active){
             return;
+        }
+        
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SPACE)) {
+        	ChestInventory();
         }
 
         handler.getMouseManager().setUimanager(uiManager);
@@ -129,6 +135,100 @@ public class Inventory {
         inventoryItems.add(item);
         
     }
+    
+    public void ChestInventory() {
+		int Amount1= Chest.getItem1Amount();
+		int Amount2 = Chest.getItem2Amount();
+		int Item1Id = Chest.getItem1().getId();
+		int Item2Id = Chest.getItem2().getId();
+
+		for(Item i : inventoryItems){
+			if((i.getId() == Item1Id)&&(Amount1<3)){
+				switch (i.getCount()) {
+				case 0 :
+					//do nothing
+					break;
+				case 1:
+					Chest.setItem1Amount(Amount1+1);
+					i.setCount(i.getCount()-1);
+					break;
+
+				case 2:
+					if (Amount1==2) {
+						Chest.setItem1Amount(Amount1+1);
+						i.setCount(i.getCount()-1);
+						break;
+					}else {
+						Chest.setItem1Amount(Amount1+2);
+						i.setCount(i.getCount()-2);
+					}
+					break;
+				default:
+					switch (Amount1) {
+					case 0:
+						Chest.setItem1Amount(Amount1+3);
+						i.setCount(i.getCount()-3);
+						break;
+					case 1:
+						Chest.setItem1Amount(Amount1+2);
+						i.setCount(i.getCount()-2);
+						break;
+					case 2:
+						Chest.setItem1Amount(Amount1+1);
+						i.setCount(i.getCount()-1);
+						break;
+
+					}
+					break;
+				}
+
+			}
+			if((i.getId() == Item2Id)&&(Amount2<3)){
+				switch (i.getCount()) {
+				case 0 :
+					//do nothing
+					break;
+				case 1:
+					Chest.setItem2Amount(Amount2+1);
+					i.setCount(i.getCount()-1);
+					break;
+
+				case 2:
+					if (Amount2==2) {
+						Chest.setItem2Amount(Amount2+1);
+						i.setCount(i.getCount()-1);
+						break;
+					}else {
+						Chest.setItem2Amount(Amount2+2);
+						i.setCount(i.getCount()-2);
+					}
+					break;
+				default:
+					switch (Amount2) {
+					case 0:
+						Chest.setItem2Amount(Amount2+3);
+						i.setCount(i.getCount()-3);
+						break;
+					case 1:
+						Chest.setItem2Amount(Amount2+2);
+						i.setCount(i.getCount()-2);
+						break;
+					case 2:
+						Chest.setItem2Amount(Amount2+1);
+						i.setCount(i.getCount()-1);
+						break;
+
+					}
+					break;
+				}
+
+				return;
+
+			}
+		}
+		
+
+	}
     
   
     
