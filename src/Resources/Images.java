@@ -2,6 +2,9 @@ package Resources;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import Game.Entities.Creatures.GoldenBoy;
+
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -52,6 +55,15 @@ public class Images {
 	public static BufferedImage key;
 	public static BufferedImage[] Chest;
 	public static BufferedImage ChestUI;
+	public static BufferedImage[] GoldenBoy_right;
+	public static BufferedImage[] GoldenBoy_left;
+	public static BufferedImage[] GoldenBoy_front;
+	public static BufferedImage[] GoldenBoy_back;
+	public static BufferedImage[] Company_right;
+	public static BufferedImage[] Company_left;
+	public static BufferedImage[] Company_front;
+	public static BufferedImage[] Company_back;
+	public static BufferedImage trophy;
 
 	
 
@@ -68,6 +80,9 @@ public class Images {
 		SpriteSheet FireBallDownsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBallDown.png"));
 		//new
 		SpriteSheet Chestsheet = new SpriteSheet(Images.loadImage("/Sheets/chest2.png"));
+		SpriteSheet GoldenBoy = new SpriteSheet(Images.loadImage("/Sheets/GoldenBoy.png"));
+		SpriteSheet Company = new SpriteSheet(Images.loadImage("/Sheets/Company.png"));
+
 
 
 
@@ -99,7 +114,18 @@ public class Images {
 		
 		//chest array
 		Chest = new BufferedImage[2];
-
+		
+		//GoldenBoy Enemy
+		GoldenBoy_left = new BufferedImage[2];
+		GoldenBoy_right = new BufferedImage[2];
+		GoldenBoy_front = new BufferedImage[2];
+		GoldenBoy_back = new BufferedImage[2];
+		
+		//Company Character
+		Company_left = new BufferedImage[2];
+		Company_right = new BufferedImage[2];
+		Company_front = new BufferedImage[2];
+		Company_back = new BufferedImage[2];
 
 
 		try {
@@ -125,6 +151,7 @@ public class Images {
 			healer = ImageIO.read(getClass().getResourceAsStream("/Blocks/magikaHealer.png"));
 			CoinTile = ImageIO.read(getClass().getResourceAsStream("/Blocks/marioblock.png"));
 			key = ImageIO.read(getClass().getResourceAsStream("/Blocks/Skey.png"));
+			trophy = ImageIO.read(getClass().getResourceAsStream("/Blocks/trophyG.png"));
 			
 			
 			//icon
@@ -269,6 +296,33 @@ public class Images {
 			SkelyEnemy_back[1]=newsheet.crop(164,227+130,width,height);
 			SkelyEnemy_back[2]=newsheet.crop(196,227+130,width,height);
 			SkelyEnemy_back[3]=newsheet.crop(228,227+130,28,height);
+			
+			//New Enemy
+			GoldenBoy_left[0] =GoldenBoy.crop(64,64,64,64);
+			GoldenBoy_left[1] =GoldenBoy.crop(320,64,64,64);
+			
+			GoldenBoy_right[0] = GoldenBoy.crop(64,192,64,64);
+			GoldenBoy_right[1] = GoldenBoy.crop(320,192,64,64);
+			
+			GoldenBoy_front[0] = GoldenBoy.crop(192,128,64,64);
+			GoldenBoy_front[1] = GoldenBoy.crop(384,128,64,64);
+
+			GoldenBoy_back[0] = GoldenBoy.crop(192,0,64,64);
+			GoldenBoy_back[1] = GoldenBoy.crop(384,0,64,64);
+			
+			//Comapany Character
+			Company_left[0] =Company.crop(64,64,64,64);
+			Company_left[1] =Company.crop(320,64,64,64);
+			
+			Company_right[0] = Company.crop(64,192,64,64);
+			Company_right[1] = Company.crop(320,192,64,64);
+			
+			Company_front[0] = Company.crop(192,128,64,64);
+			Company_front[1] = Company.crop(384,128,64,64);
+
+			Company_back[0] = Company.crop(192,0,64,64);
+			Company_back[1] = Company.crop(384,0,64,64);
+			
 
 		} catch (IOException e) {
 			e.printStackTrace();

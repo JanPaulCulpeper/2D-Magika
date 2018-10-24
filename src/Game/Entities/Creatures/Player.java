@@ -348,7 +348,7 @@ public class Player extends CreatureBase {
 
 			return animFireATTU.getCurrentFrame();
 
-		}else{   //ll
+		}else{  
 
 			return animFireATT.getCurrentFrame();
 		}
