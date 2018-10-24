@@ -190,7 +190,7 @@ public class GoldenBoy extends CreatureBase  {
 
     @Override
     public void die() {
-    	handler.getWorld().getItemManager().addItem(Item.Trophy.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+    	handler.getWorld().getItemManager().addItem(Item.compItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
     	
 
     }

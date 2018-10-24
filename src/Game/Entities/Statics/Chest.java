@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
@@ -45,8 +46,8 @@ public class Chest extends StaticEntity{
 		super(handler, x, y, 32, 32);
 		bounds.x=0;
 		bounds.y=0;
-		bounds.width = 32;
-		bounds.height = 55;
+		bounds.width = 80;
+		bounds.height = 80;
 		
 		ir.width = bounds.width*3;
 		ir.height = bounds.height*2;
@@ -84,13 +85,13 @@ public class Chest extends StaticEntity{
 
 		 Item1 = Item.Coin;
 		 Item2 = Item.key;
-//		 if (String.valueOf(handler.getWorld()).contains("CaveWorld")) {
-//				Item1 = Item.diamondOre;
-//				 Item2 = Item.brain;
-//			}
+		 if (String.valueOf(handler.getWorld()).contains("CaveWorld")) {
+				Item1 = Item.Coin;
+				 Item2 = Item.compItem;
+			}
 		
 		if (CI) {
-			g.drawImage(Images.Chest[1],(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),32,32,null);
+			g.drawImage(Images.BunnyOpen,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),80,80,null);
 			g.drawImage(Images.ChestUI,668,0,132,66,null);
 			g.drawImage(Item1.getTexture(), 680, 15, Item1.getWidth(), Item1.getHeight(), null);
 	        g.drawImage(Item2.getTexture(), 750, 15, Item2.getWidth(), Item2.getHeight(), null);
@@ -104,12 +105,12 @@ public class Chest extends StaticEntity{
 	    	g.drawRect((int)(x-handler.getGameCamera().getxOffset())+100,(int)(y-handler.getGameCamera().getyOffset())-90, textBoxWidth-2,  textBowHeight-2);
 	    	g.setColor(Color.WHITE);
 	    	g.setFont(new Font("Times New Roman",Font.BOLD,20));
-	    	g.drawString("Open chest and with your ",(int)(x-handler.getGameCamera().getxOffset())+140,(int)(y-handler.getGameCamera().getyOffset())-70);
-	    	g.drawString("inventory open drop the ",(int)(x-handler.getGameCamera().getxOffset())+140,(int)(y-handler.getGameCamera().getyOffset())-45);
-	    	g.drawString("items by pressing SPACE ",(int)(x-handler.getGameCamera().getxOffset())+140,(int)(y-handler.getGameCamera().getyOffset())-20);
+	    	g.drawString("With your inventory open",(int)(x-handler.getGameCamera().getxOffset())+140,(int)(y-handler.getGameCamera().getyOffset())-70);
+	    	g.drawString("drop the items",(int)(x-handler.getGameCamera().getxOffset())+140,(int)(y-handler.getGameCamera().getyOffset())-45);
+	    	g.drawString("by pressing SPACE ",(int)(x-handler.getGameCamera().getxOffset())+140,(int)(y-handler.getGameCamera().getyOffset())-20);
 	    	
 		} else {
-			g.drawImage(Images.Chest[0],(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),32,32,null);
+			g.drawImage(Images.GiveBunny,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),80,80,null);
 		}
 
 		checkForPlayer(g, handler.getWorld().getEntityManager().getPlayer());

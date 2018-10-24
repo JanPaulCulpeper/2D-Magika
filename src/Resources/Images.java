@@ -64,6 +64,15 @@ public class Images {
 	public static BufferedImage[] Company_front;
 	public static BufferedImage[] Company_back;
 	public static BufferedImage trophy;
+	public static BufferedImage BunnyOpen;
+	public static BufferedImage GiveBunny;
+	public static BufferedImage iceTile;
+	public static BufferedImage iceTileTop;
+	public static BufferedImage iceTileR;
+	public static BufferedImage iceTileD;
+	public static BufferedImage compItem;
+	
+
 
 	
 
@@ -82,6 +91,8 @@ public class Images {
 		SpriteSheet Chestsheet = new SpriteSheet(Images.loadImage("/Sheets/chest2.png"));
 		SpriteSheet GoldenBoy = new SpriteSheet(Images.loadImage("/Sheets/GoldenBoy.png"));
 		SpriteSheet Company = new SpriteSheet(Images.loadImage("/Sheets/Company.png"));
+	
+
 
 
 
@@ -152,6 +163,15 @@ public class Images {
 			CoinTile = ImageIO.read(getClass().getResourceAsStream("/Blocks/marioblock.png"));
 			key = ImageIO.read(getClass().getResourceAsStream("/Blocks/Skey.png"));
 			trophy = ImageIO.read(getClass().getResourceAsStream("/Blocks/trophyG.png"));
+		 BunnyOpen = ImageIO.read(getClass().getResourceAsStream("/Buttons/OPENEDBUNNY.png"));
+		 GiveBunny = ImageIO.read(getClass().getResourceAsStream("/Buttons/GIVEME.png"));
+		 iceTile = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceTile.png"));
+		 iceTileTop = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceTileTop.png"));
+		 iceTileR = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceTileR.png"));
+		 iceTileD = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceTileD.png"));
+		 compItem = ImageIO.read(getClass().getResourceAsStream("/Blocks/CompItem.png"));
+		 
+
 			
 			
 			//icon
