@@ -38,6 +38,8 @@ public class Player extends CreatureBase {
 	private Boolean LaunchedFireBallU=false;
 	private Boolean LaunchedFireBallD=false;
 	private Boolean attacking=false;
+	
+	public int counter=0;
 
 	private int animWalkingSpeed = 150;
 	private int animFireSpeed = 250;
@@ -248,7 +250,7 @@ public class Player extends CreatureBase {
 	@Override
 	public void die(){
 		System.out.println("You lose");
-		State.setState(handler.getGame().menuState);
+		State.setState(handler.getGame().gamelose);
 	}
 
 	private void getInput(){
@@ -354,6 +356,18 @@ public class Player extends CreatureBase {
 		}
 
 
+	}
+	
+	public int CompanyStatus() {
+		
+		for(Item i : getInventory().getInventoryItems()) {
+			if(i.getId()== Item.compItem.getId() && handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
+				counter=1;
+				
+			}
+		}
+		return counter;
+		
 	}
 
 	public Inventory getInventory() {

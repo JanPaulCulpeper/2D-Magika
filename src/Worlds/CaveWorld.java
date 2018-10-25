@@ -6,6 +6,7 @@ import Game.Entities.Creatures.GoldenBoy;
 import Game.Entities.Creatures.Player;
 import Game.Entities.Creatures.SkelyEnemy;
 import Game.Entities.Statics.Chest;
+
 import Game.Entities.Statics.CoinBlock;
 import Game.Entities.Statics.Door;
 import Game.Entities.Statics.Rock;
@@ -40,9 +41,12 @@ public class CaveWorld extends BaseWorld{
             entityManager.addEntity(new Tree(handler, 765, 888));
             entityManager.addEntity(new Rock(handler, 88, 1345));
             entityManager.addEntity(new Tree(handler, 77, 700));
+            entityManager.addEntity(new Rock(handler, 200, 1345));
+            entityManager.addEntity(new Rock(handler, 880, 200));
 
-
-        
+            entityManager.getPlayer().setX(spawnX);
+            entityManager.getPlayer().setY(spawnY);
+ 
 
     }
 

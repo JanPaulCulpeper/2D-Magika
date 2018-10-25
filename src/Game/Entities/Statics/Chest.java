@@ -65,11 +65,7 @@ public class Chest extends StaticEntity{
 		if(isBeinghurt()){
 			setHealth(10);
 		}
-//if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SPACE)) {
-//	
-//	Item1Amount++;
-//	
-//}
+
 
 		if(handler.getKeyManager().attbut){
 			EP=true;
@@ -86,7 +82,7 @@ public class Chest extends StaticEntity{
 		 Item1 = Item.Coin;
 		 Item2 = Item.key;
 		 if (String.valueOf(handler.getWorld()).contains("CaveWorld")) {
-				Item1 = Item.Coin;
+				Item1 = Item.rockItem;
 				 Item2 = Item.compItem;
 			}
 		
@@ -135,7 +131,7 @@ public class Chest extends StaticEntity{
 
 	
 	public static boolean DoorStatus() {
-		if ((Item1Amount==3)&&(Item2Amount==1)) {
+		if ((Item1Amount==3)&&(Item2Amount==1) ) {
 			return true;
 		} else {
 			return false;

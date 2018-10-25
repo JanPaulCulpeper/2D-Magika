@@ -37,6 +37,8 @@ public class World1 extends BaseWorld{
 
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
+        
+        
     }
 
 }

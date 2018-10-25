@@ -13,7 +13,7 @@ public abstract class EntityBase {
     //public static final int DEFAULT_HEALTH = 10;
 
     public static final int DEFAULT_HEALTH = 10;
-    protected Handler handler;
+    protected static Handler handler;
     protected float x, y;
     protected int width, height;
     protected int health;

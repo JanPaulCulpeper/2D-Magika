@@ -2,6 +2,7 @@ package Game.Inventories;
 
 import Game.Entities.Creatures.Player;
 import Game.Entities.Statics.Chest;
+import Game.GameStates.State;
 import Game.Items.Item;
 import Game.SpellCast.FireBallSpell;
 import Resources.Images;
@@ -44,6 +45,12 @@ public class Inventory {
 //    }
 
     public void tick() {
+    	for(Item i: inventoryItems) {
+    		if(i.getId()== Item.Trophy.getId() && i.getCount()==2) {
+    			State.setState(handler.getGame().gamewon);
+    		}
+    	
+    	}
 
         for(Item i : inventoryItems){
             if(i.getCount()==0){
@@ -151,6 +158,21 @@ public class Inventory {
             g.drawString(String.valueOf(inventoryItems.get(4).getCount()), 269+33,24+35);
             g.drawImage(inventoryItems.get(5).getTexture(), 330, 24, inventoryItems.get(5).getWidth(), inventoryItems.get(5).getHeight(), null);
             g.drawString(String.valueOf(inventoryItems.get(5).getCount()), 330+33,24+35);
+    }else if(inventoryItems.size() == 7) {
+        g.drawImage(inventoryItems.get(0).getTexture(), 25, 24, inventoryItems.get(0).getWidth(), inventoryItems.get(0).getHeight(), null);
+        g.drawString(String.valueOf(inventoryItems.get(0).getCount()), 25+33,25+35);
+        g.drawImage(inventoryItems.get(1).getTexture(), 86, 24, inventoryItems.get(1).getWidth(), inventoryItems.get(1).getHeight(), null);
+        g.drawString(String.valueOf(inventoryItems.get(1).getCount()), 86+33,24+35);
+        g.drawImage(inventoryItems.get(2).getTexture(), 147, 24, inventoryItems.get(2).getWidth(), inventoryItems.get(2).getHeight(), null);
+        g.drawString(String.valueOf(inventoryItems.get(2).getCount()), 147+33,24+35);
+        g.drawImage(inventoryItems.get(3).getTexture(), 208, 24, inventoryItems.get(3).getWidth(), inventoryItems.get(3).getHeight(), null);
+        g.drawString(String.valueOf(inventoryItems.get(3).getCount()), 208+33,24+35);
+        g.drawImage(inventoryItems.get(4).getTexture(), 269, 24, inventoryItems.get(4).getWidth(), inventoryItems.get(4).getHeight(), null);
+        g.drawString(String.valueOf(inventoryItems.get(4).getCount()), 269+33,24+35);
+        g.drawImage(inventoryItems.get(5).getTexture(), 330, 24, inventoryItems.get(5).getWidth(), inventoryItems.get(5).getHeight(), null);
+        g.drawString(String.valueOf(inventoryItems.get(5).getCount()), 330+33,24+35);
+        g.drawImage(inventoryItems.get(6).getTexture(), 25, 48, inventoryItems.get(6).getWidth(), inventoryItems.get(6).getHeight(), null);
+        g.drawString(String.valueOf(inventoryItems.get(6).getCount()), 25+33,48+35);
     }
                 
             
@@ -230,27 +252,10 @@ public class Inventory {
 					i.setCount(i.getCount()-1);
 					break;
 
-				case 2:
-					if (Amount2==2) {
-						Chest.setItem2Amount(Amount2+1);
-						i.setCount(i.getCount()-1);
-						break;
-					}else {
-						Chest.setItem2Amount(Amount2+2);
-						i.setCount(i.getCount()-2);
-					}
-					break;
+
 				default:
 					switch (Amount2) {
 					case 0:
-						Chest.setItem2Amount(Amount2+3);
-						i.setCount(i.getCount()-3);
-						break;
-					case 1:
-						Chest.setItem2Amount(Amount2+2);
-						i.setCount(i.getCount()-2);
-						break;
-					case 2:
 						Chest.setItem2Amount(Amount2+1);
 						i.setCount(i.getCount()-1);
 						break;

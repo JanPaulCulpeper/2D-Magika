@@ -71,6 +71,12 @@ public class Images {
 	public static BufferedImage iceTileR;
 	public static BufferedImage iceTileD;
 	public static BufferedImage compItem;
+	public static BufferedImage[] Goblin_right;
+	public static BufferedImage[] Goblin_left;
+	public static BufferedImage[] Goblin_front;
+	public static BufferedImage[] Goblin_back;
+	public static BufferedImage GameWon;
+	public static BufferedImage GameLose;
 	
 
 
@@ -91,6 +97,7 @@ public class Images {
 		SpriteSheet Chestsheet = new SpriteSheet(Images.loadImage("/Sheets/chest2.png"));
 		SpriteSheet GoldenBoy = new SpriteSheet(Images.loadImage("/Sheets/GoldenBoy.png"));
 		SpriteSheet Company = new SpriteSheet(Images.loadImage("/Sheets/Company.png"));
+		SpriteSheet Goblin = new SpriteSheet(Images.loadImage("/Sheets/goblin.png"));
 	
 
 
@@ -137,6 +144,13 @@ public class Images {
 		Company_right = new BufferedImage[2];
 		Company_front = new BufferedImage[2];
 		Company_back = new BufferedImage[2];
+		
+		// Goblin Character
+		Goblin_left = new BufferedImage[2];
+		Goblin_right = new BufferedImage[2];
+		Goblin_front = new BufferedImage[2];
+		Goblin_back = new BufferedImage[2];
+		
 
 
 		try {
@@ -170,7 +184,8 @@ public class Images {
 		 iceTileR = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceTileR.png"));
 		 iceTileD = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceTileD.png"));
 		 compItem = ImageIO.read(getClass().getResourceAsStream("/Blocks/CompItem.png"));
-		 
+		 GameWon = ImageIO.read(getClass().getResourceAsStream("/Sheets/youwon.gif"));
+		 GameLose = ImageIO.read(getClass().getResourceAsStream("/Sheets/gameover.gif"));
 
 			
 			
@@ -342,6 +357,20 @@ public class Images {
 
 			Company_back[0] = Company.crop(192,0,64,64);
 			Company_back[1] = Company.crop(384,0,64,64);
+			
+			
+			//Goblin
+			Goblin_left[0] =Goblin.crop(64,192,64,64);
+			Goblin_left[1] =Goblin.crop(256,192,64,64);
+			
+			Goblin_right[0] = Goblin.crop(128,64,64,64);
+			Goblin_right[1] = Goblin.crop(192,64,64,64);
+			
+			Goblin_front[0] = Goblin.crop(64,0,64,64);
+			Goblin_front[1] = Goblin.crop(256,0,64,64);
+
+			Goblin_back[0] = Goblin.crop(64,128,64,64);
+			Goblin_back[1] = Goblin.crop(192,128,64,64);
 			
 
 		} catch (IOException e) {
