@@ -63,6 +63,7 @@ public class Company extends CreatureBase  {
         animUp.tick();
         animRight.tick();
         animLeft.tick();
+        if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
 
         moveCount ++;
         if(moveCount>=60){
@@ -88,7 +89,7 @@ public class Company extends CreatureBase  {
 
         Skelyinventory.tick();
 
-
+        }
     }
 
 
@@ -96,6 +97,7 @@ public class Company extends CreatureBase  {
         xMove = 0;
         yMove = 0;
 
+        if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
         SkelyCam.x = (int) (x - handler.getGameCamera().getxOffset() - (64 * 3));
         SkelyCam.y = (int) (y - handler.getGameCamera().getyOffset() - (64 * 3));
         SkelyCam.width = 64 * 7;
@@ -176,10 +178,13 @@ public class Company extends CreatureBase  {
 
             }
         }
+        }
     }
 
     @Override
     public void checkAttacks(){
+    	
+    	if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
         attackTimer += System.currentTimeMillis() - lastAttackTimer;
         lastAttackTimer = System.currentTimeMillis();
         if(attackTimer < attackCooldown)
@@ -218,7 +223,7 @@ public class Company extends CreatureBase  {
                 return;
             }
         }
-
+    	}
     }
 
     @Override

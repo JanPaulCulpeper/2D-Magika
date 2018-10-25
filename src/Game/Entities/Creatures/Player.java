@@ -122,6 +122,20 @@ public class Player extends CreatureBase {
 
 
 		}
+		
+		
+		// add items 
+		if( handler.getKeyManager().keyJustPressed(KeyEvent.VK_X)) {
+			inventory.addItem(Item.Coin);
+			inventory.addItem(Item.compItem);
+			inventory.addItem(Item.key);
+			inventory.addItem(Item.rockItem);
+			inventory.addItem(Item.woodItem);
+			inventory.addItem(Item.Trophy);
+			inventory.addItem(Item.Healer);
+			inventory.addItem(Item.fireRuneItem);
+		
+		}
 
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_SHIFT)) {
 			Player e = handler.getWorld().getEntityManager().getPlayer();
@@ -357,6 +371,16 @@ public class Player extends CreatureBase {
 
 
 	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public int CompanyStatus() {
 		
