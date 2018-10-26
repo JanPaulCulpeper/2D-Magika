@@ -6,9 +6,10 @@ import Game.Entities.Creatures.GoldenBoy;
 import Game.Entities.Creatures.Player;
 import Game.Entities.Creatures.SkelyEnemy;
 import Game.Entities.Statics.Chest;
-
+import Game.Entities.Statics.Chest2;
 import Game.Entities.Statics.CoinBlock;
 import Game.Entities.Statics.Door;
+import Game.Entities.Statics.Door2;
 import Game.Entities.Statics.Rock;
 import Game.Entities.Statics.Tree;
 import Main.Handler;
@@ -31,10 +32,12 @@ public class CaveWorld extends BaseWorld{
 
         
         
-        entityManager.addEntity(new GoldenBoy(handler, 100, 500)); //new enemy in cave world 
-            entityManager.addEntity(new Company(handler, 150, 500)); //new enemy in cave world 
-            entityManager.addEntity(new Door(handler, 100, 0,world3)); //new enemy in cave world 
-            entityManager.addEntity(new Chest(handler, 250, 100));
+        entityManager.addEntity(new GoldenBoy(handler, 500, 800)); //new enemy in cave world 
+            entityManager.addEntity(new Company(handler, spawnX + 100, spawnY - 50)); //new enemy in cave world 
+            entityManager.addEntity(new Door2(handler, 110, 0,world3)); //new in cave world 
+            entityManager.addEntity(new SkelyEnemy(handler, 400, 500)); // new enemy in cave world 
+            entityManager.addEntity(new SkelyEnemy(handler, 100, 900)); // new enemy in cave world
+            entityManager.addEntity(new Chest2(handler, 250, 100));
             entityManager.addEntity(new CoinBlock(handler, 1300, 800));
             entityManager.addEntity(new CoinBlock(handler, 800, 500));
             entityManager.addEntity(new CoinBlock(handler, 100, 1220));

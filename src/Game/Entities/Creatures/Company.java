@@ -23,7 +23,7 @@ public class Company extends CreatureBase  {
 
     private int animWalkingSpeed = 150;
     private Inventory Skelyinventory;
-    private Rectangle SkelyCam;
+    private Rectangle CompanyC;
 
     private int healthcounter =0;
 
@@ -36,13 +36,14 @@ public class Company extends CreatureBase  {
     public Company(Handler handler, float x, float y) {
         super(handler, x, y, CreatureBase.DEFAULT_CREATURE_WIDTH, CreatureBase.DEFAULT_CREATURE_HEIGHT);
         bounds.x=8*2;
+        
         bounds.y=18*2;
         bounds.width=16*2;
         bounds.height=14*2;
         speed=1.5f;
         health=10;
 
-        SkelyCam= new Rectangle();
+        CompanyC= new Rectangle();
 
 
 
@@ -98,13 +99,13 @@ public class Company extends CreatureBase  {
         yMove = 0;
 
         if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
-        SkelyCam.x = (int) (x - handler.getGameCamera().getxOffset() - (64 * 3));
-        SkelyCam.y = (int) (y - handler.getGameCamera().getyOffset() - (64 * 3));
-        SkelyCam.width = 64 * 7;
-        SkelyCam.height = 64 * 7;
+        CompanyC.x = (int) (x - handler.getGameCamera().getxOffset() - (64 * 3));
+        CompanyC.y = (int) (y - handler.getGameCamera().getyOffset() - (64 * 3));
+        CompanyC.width = 64 * 7;
+        CompanyC.height = 64 * 7;
 
-        if (SkelyCam.contains(handler.getWorld().getEntityManager().getPlayer().getX() - handler.getGameCamera().getxOffset(), handler.getWorld().getEntityManager().getPlayer().getY() - handler.getGameCamera().getyOffset())
-                || SkelyCam.contains(handler.getWorld().getEntityManager().getPlayer().getX() - handler.getGameCamera().getxOffset() + handler.getWorld().getEntityManager().getPlayer().getWidth(), handler.getWorld().getEntityManager().getPlayer().getY() - handler.getGameCamera().getyOffset() + handler.getWorld().getEntityManager().getPlayer().getHeight())) {
+        if (CompanyC.contains(handler.getWorld().getEntityManager().getPlayer().getX() - handler.getGameCamera().getxOffset(), handler.getWorld().getEntityManager().getPlayer().getY() - handler.getGameCamera().getyOffset())
+                || CompanyC.contains(handler.getWorld().getEntityManager().getPlayer().getX() - handler.getGameCamera().getxOffset() + handler.getWorld().getEntityManager().getPlayer().getWidth(), handler.getWorld().getEntityManager().getPlayer().getY() - handler.getGameCamera().getyOffset() + handler.getWorld().getEntityManager().getPlayer().getHeight()) ) {
 
             Rectangle cb = getCollisionBounds(0, 0);
             Rectangle ar = new Rectangle();
@@ -129,7 +130,7 @@ public class Company extends CreatureBase  {
             for (EntityBase e : handler.getWorld().getEntityManager().getEntities()) {
                 if (e.equals(this))
                     continue;
-                if (e.getCollisionBounds(0, 0).intersects(ar) && e.equals(handler.getWorld().getEntityManager().getPlayer())) {
+                if (e.getCollisionBounds(0, 0).intersects(ar)  && e.equals(handler.getWorld().getEntityManager().getPlayer())) {
 
                     checkAttacks();
                     return;
@@ -137,10 +138,10 @@ public class Company extends CreatureBase  {
             }
 
 
-            if (x >= handler.getWorld().getEntityManager().getPlayer().getX() - 8 && x <= handler.getWorld().getEntityManager().getPlayer().getX() + 8) {//nada
+            if (x >= handler.getWorld().getEntityManager().getPlayer().getX() - 8 && x <= handler.getWorld().getEntityManager().getPlayer().getX() + 8 ) {
 
                 xMove = 0;
-            } else if (x < handler.getWorld().getEntityManager().getPlayer().getX()) {//move right
+            } else if (x < handler.getWorld().getEntityManager().getPlayer().getX() ) {//move right
 
                 xMove = speed;
 
@@ -149,12 +150,12 @@ public class Company extends CreatureBase  {
                 xMove = -speed;
             }
 
-            if (y >= handler.getWorld().getEntityManager().getPlayer().getY() - 8 && y <= handler.getWorld().getEntityManager().getPlayer().getY() + 8) {//nada
+            if (y >= handler.getWorld().getEntityManager().getPlayer().getY() - 8 && y <= handler.getWorld().getEntityManager().getPlayer().getY() + 8 ) {
                 yMove = 0;
-            } else if (y < handler.getWorld().getEntityManager().getPlayer().getY()) {//move down
+            } else if (y < handler.getWorld().getEntityManager().getPlayer().getX() ) {//move down
                 yMove = speed;
 
-            } else if (y > handler.getWorld().getEntityManager().getPlayer().getY()) {//move up
+            } else if (y > handler.getWorld().getEntityManager().getPlayer().getX() ) {
                 yMove = -speed;
             }
 
@@ -217,7 +218,9 @@ public class Company extends CreatureBase  {
         for(EntityBase e : handler.getWorld().getEntityManager().getEntities()){
             if(e.equals(this))
                 continue;
-            if(e.getCollisionBounds(0, 0).intersects(ar)){
+//            if(e.getCollisionBounds(0, 0).intersects(ar)){
+            if (e.getCollisionBounds(0, 0).intersects(ar) && (e.getCollisionBounds(0, 0).intersects(ar) && e.equals(handler.getWorld().getEntityManager().getGoldenBoy()))) {
+
                 e.hurt(attack);
                 System.out.println(e + " has " + e.getHealth() + " lives.");
                 return;
@@ -247,8 +250,10 @@ if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
 
     @Override
     public void die() {
+    	if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
+
     	handler.getWorld().getItemManager().addItem(Item.key.createNew((int)x + bounds.x,(int)y + bounds.y,1));
     	
-
+    	}
     }
 }

@@ -1,6 +1,10 @@
 package Game.Entities;
 
+import Game.Entities.Creatures.Company;
+import Game.Entities.Creatures.Goblin;
+import Game.Entities.Creatures.GoldenBoy;
 import Game.Entities.Creatures.Player;
+import Game.Entities.Creatures.SkelyEnemy;
 import Main.Handler;
 
 import java.awt.*;
@@ -15,6 +19,13 @@ public class EntityManager {
 
     private Handler handler;
     private Player player;
+    private Company company;
+    private SkelyEnemy skely;
+    private Goblin goblin;
+    private GoldenBoy goldenBoy;
+    
+    
+    
     private ArrayList<EntityBase> entities;
     private Comparator<EntityBase> renderSorter = new Comparator<EntityBase>(){
         @Override
@@ -28,11 +39,14 @@ public class EntityManager {
     public EntityManager(Handler handler, Player player){
         this.handler = handler;
         this.player = player;
+     
         entities = new ArrayList<EntityBase>();
         addEntity(player);
+      
     }
 
-    public void tick(){
+  
+	public void tick(){
         Iterator<EntityBase> it = entities.iterator();
 
         while(it.hasNext()){
@@ -71,8 +85,27 @@ public class EntityManager {
     public void setPlayer(Player player) {
         this.player = player;
     }
+    
+    public Company getCompanion() {
+        return company;
+    }
 
-    public ArrayList<EntityBase> getEntities() {
+    public SkelyEnemy getSkely() {
+		return skely;
+	}
+
+
+	public Goblin getGoblin() {
+		return goblin;
+	}
+
+
+	public GoldenBoy getGoldenBoy() {
+		return goldenBoy;
+	}
+
+
+	public ArrayList<EntityBase> getEntities() {
         return entities;
     }
 

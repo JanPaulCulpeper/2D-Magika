@@ -1,5 +1,6 @@
 package Worlds;
 
+import Game.Entities.Creatures.Company;
 import Game.Entities.Creatures.Player;
 import Game.Entities.Creatures.SkelyEnemy;
 import Game.Entities.Statics.*;
@@ -34,6 +35,7 @@ public class World1 extends BaseWorld{
         entityManager.addEntity(new CoinBlock(handler, 100, 1220));
         entityManager.addEntity(new CoinBlock(handler, 400, 500));
         entityManager.addEntity(new Chest(handler, 250, 100));
+        entityManager.addEntity(new Company(handler, 150, 500)); //new enemy in cave world 
 
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);

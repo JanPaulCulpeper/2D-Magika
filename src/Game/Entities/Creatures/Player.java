@@ -374,14 +374,6 @@ public class Player extends CreatureBase {
 	
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	public int CompanyStatus() {
 		
 		for(Item i : getInventory().getInventoryItems()) {

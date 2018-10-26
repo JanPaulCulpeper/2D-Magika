@@ -83,7 +83,7 @@ public class Door2 extends StaticEntity {
         checkForPlayer(g, handler.getWorld().getEntityManager().getPlayer());
     }
     	}
-    }
+   }
     
 
     private void checkForPlayer(Graphics g, Player p) {
