@@ -1,6 +1,7 @@
 package Worlds;
 import java.awt.event.KeyEvent;
 
+
 import Game.Entities.Creatures.Company;
 import Game.Entities.Creatures.GoldenBoy;
 import Game.Entities.Creatures.Player;
@@ -52,6 +53,7 @@ public class CaveWorld extends BaseWorld{
  
 
     }
+    
+    }
 
 
-}

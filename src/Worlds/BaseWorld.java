@@ -1,5 +1,6 @@
 package Worlds;
 
+
 import Game.Entities.Creatures.Player;
 import Game.Entities.EntityManager;
 import Game.GameStates.State;
@@ -52,6 +53,10 @@ public class BaseWorld {
             countP=0;
             State.setState(handler.getGame().pauseState);
         }
+        
+        
+        
+        
     }
 
     public void render(Graphics g){

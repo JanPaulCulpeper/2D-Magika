@@ -218,7 +218,7 @@ public class Company extends CreatureBase  {
         for(EntityBase e : handler.getWorld().getEntityManager().getEntities()){
             if(e.equals(this))
                 continue;
-//            if(e.getCollisionBounds(0, 0).intersects(ar)){
+            if(e.getCollisionBounds(0, 0).intersects(ar)){
             if (e.getCollisionBounds(0, 0).intersects(ar) && (e.getCollisionBounds(0, 0).intersects(ar) && e.equals(handler.getWorld().getEntityManager().getGoldenBoy()))) {
 
                 e.hurt(attack);
@@ -228,21 +228,24 @@ public class Company extends CreatureBase  {
         }
     	}
     }
+    }
 
     @Override
     public void render(Graphics g) {
        
-       // if(handler.getWorld().getEntityManager().getPlayer().getInventory().CompStatus()==true && handler.getKeyManager().keyJustPressed(KeyEvent.VK_G) ) {
-if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
+        //if(handler.getWorld().getEntityManager().getPlayer().getInventory().CompStatus()==true && handler.getKeyManager().keyJustPressed(KeyEvent.VK_G) ) {
+        	if(handler.getWorld().getEntityManager().getPlayer().CompanyStatus()== 1) {
     	g.drawImage(getCurrentAnimationFrame(animDown,animUp,animLeft,animRight,Images.Company_front,Images.Company_back,Images.Company_left,Images.Company_right), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
         if(isBeinghurt() && healthcounter<=120){
             g.setColor(Color.white);
             
             g.drawString("Company: " + getHealth(),(int) (x-handler.getGameCamera().getxOffset()),(int) (y-handler.getGameCamera().getyOffset()-20));
             
-       // }
         }
-    }}
+        }
+    }
+   // }
+    
     
 
 

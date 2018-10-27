@@ -39,6 +39,8 @@ public class Player extends CreatureBase {
 	private Boolean LaunchedFireBallD=false;
 	private Boolean attacking=false;
 	
+
+	
 	public int counter=0;
 
 	private int animWalkingSpeed = 150;
@@ -48,8 +50,8 @@ public class Player extends CreatureBase {
 	private int movexp,moveyp,movexn,moveyn,tempmoveyp,tempmovexn,tempmoveyn,tempmovexp,fy,fx;
 
 	//spells
-
-
+	
+	
 
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, CreatureBase.DEFAULT_CREATURE_WIDTH, CreatureBase.DEFAULT_CREATURE_HEIGHT);
@@ -59,7 +61,7 @@ public class Player extends CreatureBase {
 		bounds.width=16*2;
 		bounds.height=14*2;
 		health=75;
-		attack=2;
+		attack=4;
 
 
 		animDown = new Animation(animWalkingSpeed,Images.player_front);
@@ -112,6 +114,7 @@ public class Player extends CreatureBase {
 		if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_C)){
 			readyFireAttack();
 		}
+		
 
 		// Attack
 		if(handler.getKeyManager().attbut) {
@@ -373,11 +376,12 @@ public class Player extends CreatureBase {
 	}
 	
 
-	
+
+//	// added
 	public int CompanyStatus() {
 		
 		for(Item i : getInventory().getInventoryItems()) {
-			if(i.getId()== Item.compItem.getId() && handler.getKeyManager().keyJustPressed(KeyEvent.VK_G)) {
+			if(i.getId()== Item.compItem.getId() && handler.getKeyManager().keyJustPressed(KeyEvent.VK_G) ) {
 				counter=1;
 				
 			}

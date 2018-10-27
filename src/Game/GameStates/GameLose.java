@@ -22,17 +22,8 @@ public class GameLose extends State {
         super(handler);
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUimanager(uiManager);
-
-
-        uiManager.addObjects(new UIImageButton(handler.getWidth()/2-64, handler.getHeight()-100, 128, 64, Images.butstart, new ClickListlener() {
-            @Override
-            public void onClick() {
-                handler.getMouseManager().setUimanager(null);
-                handler.getGame().reStart();
-                State.setState(handler.getGame().gameState);
-            }
-        }));
     }
+
 
     @Override
     public void tick() {
