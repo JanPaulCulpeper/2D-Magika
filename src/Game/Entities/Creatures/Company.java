@@ -41,7 +41,7 @@ public class Company extends CreatureBase  {
         bounds.width=16*2;
         bounds.height=14*2;
         speed=1.5f;
-        health=10;
+        health=50;
 
         CompanyC= new Rectangle();
 
@@ -130,7 +130,7 @@ public class Company extends CreatureBase  {
             for (EntityBase e : handler.getWorld().getEntityManager().getEntities()) {
                 if (e.equals(this))
                     continue;
-                if (e.getCollisionBounds(0, 0).intersects(ar)  && e.equals(handler.getWorld().getEntityManager().getPlayer())) {
+                if (e.getCollisionBounds(0, 0).intersects(ar)  && e.equals(handler.getWorld().getEntityManager().getPlayer())){
 
                     checkAttacks();
                     return;
