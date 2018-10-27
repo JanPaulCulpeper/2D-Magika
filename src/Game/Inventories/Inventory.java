@@ -35,14 +35,7 @@ public class Inventory {
         uiManager.addObjects(new UIInventory(0,0, 329, 265, Images.inventory,() -> {
         }));
     }
-//    public void XaddItems() {
-//    //Add all items when X is pressed
-//    	
-//    if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_X)) {
-//    	for(Item i : inventoryItems){
-//    	 handler.getWorld().getItemManager().;
-//    }}
-//    }
+
 
     public void tick() {
     	for(Item i: inventoryItems) {

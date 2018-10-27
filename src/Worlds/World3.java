@@ -31,15 +31,10 @@ public class World3 extends BaseWorld{
             entityManager.addEntity(new Goblin(handler, 125, 1000)); //new enemy in cave world 
             entityManager.addEntity(new Goblin(handler, 500, 1000)); //new enemy in cave world 
             entityManager.addEntity(new Chest3(handler, 250, 100));
-            
             entityManager.addEntity(new Rock(handler, 70, 250));
-            
             entityManager.addEntity(new Rock(handler, 70, 1025));
             entityManager.addEntity(new Rock(handler, 70, 1100));
-            
             entityManager.addEntity(new Rock(handler, 125, 900));
-            
-          
             entityManager.addEntity(new Rock(handler, 440, 900));
             entityManager.addEntity(new Rock(handler, 450, 760));
             entityManager.addEntity(new Rock(handler, 580, 900));
